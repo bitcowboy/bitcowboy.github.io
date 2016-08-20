@@ -57,6 +57,7 @@
         {{/author}}
 
             <section class="share">
+            	<!--
                 <h4>Share this post</h4>
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -70,6 +71,21 @@
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
+                -->
+                
+                <div class="ds-share" data-thread-key="{{url}}" data-title="{{title}}" data-images="url({{image}})" data-content="{{excerpt words="19"}}" data-url="{{url absolute="true"}}">
+                  <div class="ds-share-inline">
+                    <ul  class="ds-share-icons-16">
+                      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+                      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+                      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+                      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                    </ul>
+                  <div class="ds-share-icons-more">
+                  </div>
+                </div>
+              </div>
             </section>
 
         </footer>
@@ -95,7 +111,7 @@
         
         <section class="post-comments">
           <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+	  <div class="ds-thread" data-thread-key="{{url}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
 	  <!-- 多说评论框 end -->
         </section>
 
