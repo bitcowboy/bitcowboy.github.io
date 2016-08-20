@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 20 Aug 2016 05:45:36 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 20 Aug 2016 06:03:52 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
 <p>今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。</p>
 </div>
 <div class="paragraph">
@@ -6,4 +6,63 @@
 </div>
 <div class="paragraph">
 <p>所幸今天看到了<em>hubpress</em>，一个直接在<em>github</em>上生成静态Blog的工具。非常小巧好用，前提条件就只有一个，你要有一个免费的<em>github</em>账号。花了15分钟看上手文档和配置，15分钟敲内容，这第一篇Blog就这么诞生了。虽然有点晚，但有个开始总是好的。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/hello-world.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/hello-world.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/hello-world.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/hello-world.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[TEST]]></title><description><![CDATA[<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+注解
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+提示
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+警告
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+小心
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+重要
+</td>
+</tr>
+</table>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/TEST.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/TEST.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
