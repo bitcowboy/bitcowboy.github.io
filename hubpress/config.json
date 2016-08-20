@@ -6,7 +6,7 @@
   },
   "site": {
     "title": "BitCowboy's Blog",
-    "cover": "http://github.com/bitcowboy/bitcowboy.github.io/images/title.jpg"
+    "cover": "title.jpg"
   },
   "socialnetwork": {},
   "theme": {
