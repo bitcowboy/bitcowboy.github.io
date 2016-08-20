@@ -6,6 +6,7 @@
   },
   "site": {
     "title": "BitCowboy's Blog",
+    "description": "Tech meets Art",
     "cover": "/images/title.jpg"
   },
   "socialnetwork": {},
