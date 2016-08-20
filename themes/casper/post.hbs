@@ -57,8 +57,8 @@
         {{/author}}
 
             <section class="share">
-            	<!--
                 <h4>Share this post</h4>
+                <!--
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
@@ -72,6 +72,10 @@
                     <span class="hidden">Google+</span>
                 </a>
                 -->
+                <div class="ds-share" data-thread-key="{{id}}" data-title="{{title}}" data-images="{{#if image}}"url({{image}}){{/if}}" data-content="{{excerpt words="19"}}..." data-url="{{url absolute="true"}}">
+              	    <a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a>
+              	    <a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a>
+              	</div>
             </section>
 
         </footer>
