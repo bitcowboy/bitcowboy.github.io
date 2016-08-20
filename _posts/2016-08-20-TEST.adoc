@@ -1,0 +1,11 @@
+= TEST
+
+NOTE: 注解
+
+TIP: 提示
+
+WARNING: 警告
+
+CAUTION: 小心 
+
+IMPORTANT: 重要
