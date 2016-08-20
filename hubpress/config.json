@@ -5,7 +5,8 @@
     "branch": "master"
   },
   "site": {
-    "title": "BitCowboy's Blog"
+    "title": "BitCowboy's Blog",
+    "cover": "title.jpg"
   },
   "socialnetwork": {},
   "theme": {
