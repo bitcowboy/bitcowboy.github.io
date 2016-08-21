@@ -81,6 +81,7 @@
               <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
               -->
               <div class="ds-share" 
+                align="right"
                 data-thread-key="{{id}}" 
                 data-title="{{title}}" 
                 data-images="{{#if image}}url({{image}}){{/if}}" 
@@ -101,7 +102,13 @@
         <div id="disqus_thread"></div>
       </section>
     </article>
-
+    
+    <section class="post-comments"
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+    <!-- 多说评论框 end -->
+    </section>
+    
     {{> footer this}}
   </div>
 </section>
@@ -124,9 +131,3 @@
 </section>
 
 {{/if}}
-
-<section class="post-comments">
-<!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
-<!-- 多说评论框 end -->
-</section>
