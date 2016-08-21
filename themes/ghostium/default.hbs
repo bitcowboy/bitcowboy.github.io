@@ -35,19 +35,6 @@
     <link rel="stylesheet" href="{{asset 'css/custom.css'}}"/>
     <link rel="stylesheet" href="{{asset 'css/asciidoctor-foundation.css'}}"/>
 
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:"bitcowboy"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-
     <script type="text/javascript">
       {{> custom/config}}
 
@@ -104,6 +91,34 @@
 
     </script>
     {{/if}}
+    
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"bitcowboy"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      
+      function pajx_loadDuodsuo(){
+        var dus=$(".ds-thread");
+        if($(dus).length==1){
+          var el = document.createElement('div');
+          el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+          el.setAttribute('data-url',$(dus).attr("data-url"));
+          DUOSHUO.EmbedThread(el);
+          $(dus).html(el);
+        }
+      }
+      
+      $(document).ready(function() {
+        $(this).on('pjax:end', pajx_loadDuodsuo);
+      });
+    </script>
+    <!-- 多说公共JS代码 end -->
     
   </body>
 </html>
