@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Aug 2016 09:16:28 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Aug 2016 09:16:52 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
 <p><em>HubPress</em>虽然用起来很方便，不过显然和那些起步比较早的同类系统相比，周边配套就没那么完善了。虽然系统原生支持分享到<em>twitter</em>、<em>facebook</em>和<em>google plus</em>，并且可以用<em>Disqus</em>来评论，但是显然这些都没有办法适应国内网络的特殊性。</p>
 </div>
 <div class="paragraph">
@@ -6,4 +6,12 @@
 </div>
 <div class="paragraph">
 <p>这样，基本的Blog功能就差不多了。至于排版和美化的工作，就留待以后持续改进了。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
+<p>今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。</p>
+</div>
+<div class="paragraph">
+<p>其实有写Blog的想法已经很久了，一来是怕自己坚持不下去，二来是实在没有找到一个合适的地方来写。国内的Blog大多商业味道比较浓厚，而且页面排版也是杂乱无章。自己又实在是懒得自己去租服务器架数据库配脚本。平时工作已经够忙得了，实在是不想再给自己找麻烦，所以这事儿也就一直搁置了。</p>
+</div>
+<div class="paragraph">
+<p>所幸今天看到了<em>hubpress</em>，一个直接在<em>github</em>上生成静态Blog的工具。非常小巧好用，前提条件就只有一个，你要有一个免费的<em>github</em>账号。花了15分钟看上手文档和配置，15分钟敲内容，这第一篇Blog就这么诞生了。虽然有点晚，但有个开始总是好的。</p>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/hello-world.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/hello-world.html</guid><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
