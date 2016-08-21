@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/main.min.css?v=1471765830401"/>
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/custom.css?v=1471765830401"/>
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1471765830401"/>
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/main.min.css?v=1471766553684"/>
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/custom.css?v=1471766553684"/>
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1471766553684"/>
 
     <script type="text/javascript">
       var ga_ua = 'UA-XXXXX-X';
@@ -67,7 +67,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1471765830401"></script>
+    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1471766553684"></script>
 
     <link rel="canonical" href="https://bitcowboy.github.io/" />
     <meta name="referrer" content="origin" />
@@ -223,7 +223,7 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1471765830401"></script>
+    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1471766553684"></script>
 
     
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -238,13 +238,26 @@ null
       })();
       
       function pajx_loadDuodsuo(){
-        var dus=$(".ds-thread");
-        if($(dus).length==1){
+        var dst=$(".ds-thread");
+        if($(dst).length==1){
           var el = document.createElement('div');
-          el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-          el.setAttribute('data-url',$(dus).attr("data-url"));
+          el.setAttribute('data-thread-key',$(dst).attr("data-thread-key"));
+          el.setAttribute('data-title',$(dst).attr("data-title"));
+          el.setAttribute('data-url',$(dst).attr("data-url"));
           DUOSHUO.EmbedThread(el);
-          $(dus).html(el);
+          $(dst).html(el);
+        }
+        
+        var dss=$(".ds-share");
+        if($(dss).length==1){
+          var el = document.createElement('div');
+          el.setAttribute('data-thread-key',$(dss).attr("data-thread-key"));
+          el.setAttribute('data-title',$(dss).attr("data-title"));
+          el.setAttribute('data-images',$(dss).attr("data-images"));
+          el.setAttribute('data-content',$(dss).attr("data-content"));
+          el.setAttribute('data-url',$(dss).attr("data-url"));
+          DUOSHUO.EmbedThread(el);
+          $(dss).html(el);
         }
       }
       
