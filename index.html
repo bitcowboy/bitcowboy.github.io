@@ -38,22 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/main.min.css?v=1471763082041"/>
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/custom.css?v=1471763082041"/>
-    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1471763082041"/>
-
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:"bitcowboy"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!-- 多说公共JS代码 end -->
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/main.min.css?v=1471765830401"/>
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/custom.css?v=1471765830401"/>
+    <link rel="stylesheet" href="//bitcowboy.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1471765830401"/>
 
     <script type="text/javascript">
       var ga_ua = 'UA-XXXXX-X';
@@ -80,7 +67,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1471763082041"></script>
+    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1471765830401"></script>
 
     <link rel="canonical" href="https://bitcowboy.github.io/" />
     <meta name="referrer" content="origin" />
@@ -236,8 +223,36 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1471763082041"></script>
+    <script src="//bitcowboy.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1471765830401"></script>
 
+    
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"bitcowboy"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      
+      function pajx_loadDuodsuo(){
+        var dus=$(".ds-thread");
+        if($(dus).length==1){
+          var el = document.createElement('div');
+          el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+          el.setAttribute('data-url',$(dus).attr("data-url"));
+          DUOSHUO.EmbedThread(el);
+          $(dus).html(el);
+        }
+      }
+      
+      $(document).ready(function() {
+        $(this).on('pjax:end', pajx_loadDuodsuo);
+      });
+    </script>
+    <!-- 多说公共JS代码 end -->
     
   </body>
 </html>
