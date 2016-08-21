@@ -1,6 +1,6 @@
 = 集成了评论和分享功能
 :hp-alt-title: integrating comment system
-:hp-tags: HubPress, duoshuo, 
+:hp-tags: HubPress, DuoShuo, 
 
 _HubPress_虽然用起来很方便，不过显然和那些起步比较早的同类系统相比，周边配套就没那么完善了。虽然系统原生支持分享到_twitter_、_facebook_和_google plus_，并且可以用_Disqus_来评论，但是显然这些都没有办法适应国内网络的特殊性。
 
