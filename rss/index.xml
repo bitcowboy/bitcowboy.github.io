@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Aug 2016 14:33:55 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Aug 2016 14:35:04 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
 <p><em>HubPress</em>虽然用起来很方便，不过显然和那些起步比较早的同类系统相比，周边配套就没那么完善了。虽然系统原生支持分享到<em>twitter</em>、<em>facebook</em>和<em>google plus</em>，并且可以用<em>Disqus</em>来评论，但是显然这些都没有办法适应国内网络的特殊性。</p>
 </div>
 <div class="paragraph">
@@ -6,7 +6,7 @@
 </div>
 <div class="paragraph">
 <p>这样，基本的Blog功能就差不多了。至于排版和美化的工作，就留待以后持续改进了。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ 多说]]></category><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ duoshuo]]></category><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
 <p>今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。</p>
 </div>
 <div class="paragraph">
