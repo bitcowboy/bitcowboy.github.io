@@ -1,4 +1,5 @@
 = hello world
+:hp-tags: HubPress
 
 今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。
 
