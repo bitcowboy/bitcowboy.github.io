@@ -10,7 +10,9 @@
     "logo": "/images/logo.jpg",
     "cover": ""
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "bitcowboy@gmail.com"
+  },
   "theme": {
     "name": "casper"
   }
