@@ -72,9 +72,8 @@
                     <span class="hidden">Google+</span>
                 </a>
                 -->
-                <div style="width: 100%">
                 <div class="ds-share" 
-                	data-thread-key="{{slug}}" 
+                	data-thread-key="{{url}}" 
                 	data-title="{{title}}" 
                 	data-images="{{#if image}}url({{image}}){{/if}} 
                 	data-content="{{excerpt words="19"}}..." 
@@ -85,7 +84,6 @@
               	            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
               	        </ul>
               	    </div>
-              	</div>
               	</div>
             </section>
 
@@ -112,7 +110,7 @@
         
         <section class="post-comments">
           <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="{{slug}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+	  <div class="ds-thread" data-thread-key="{{url}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
 	  <!-- 多说评论框 end -->
         </section>
 
