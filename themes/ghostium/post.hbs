@@ -75,9 +75,24 @@
             </div>
             <div class="post-social">
               <h4 class="post-footer-heading">Spread the word</h4>
+              <!--
               <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
               <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
               <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+              -->
+              <div class="ds-share" 
+                data-thread-key="{{id}}" 
+                data-title="{{title}}" 
+                data-images="{{#if image}}url({{image}}){{/if}}" 
+                data-content="{{excerpt words="19"}}..." 
+                data-url="{{url absolute="true"}}">
+                  <div class="ds-share-inline">
+                    <ul class="ds-share-icons-16">
+                      <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                      <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                    </ul>
+                  </div>
+              </div>
             </div>
           </footer>
         </section>
@@ -109,3 +124,9 @@
 </section>
 
 {{/if}}
+
+<section class="post-comments">
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+<!-- 多说评论框 end -->
+</section>
