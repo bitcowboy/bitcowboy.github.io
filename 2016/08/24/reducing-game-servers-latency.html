@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://bitcowboy.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//bitcowboy.github.io/themes/casper/assets/css/screen.css?v=1472013194192" />
+    <link rel="stylesheet" type="text/css" href="//bitcowboy.github.io/themes/casper/assets/css/screen.css?v=1472013377583" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html" />
@@ -109,7 +109,7 @@ end if</code></pre>
 <h2 id="___2">应用层面提高网络处理的频率</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MMO的游戏服务器通常都有一个帧的概念。就是游戏世界会按固定的帧速率运行。一来是为了公平，二来是游戏世界模拟的需要。通常从服务器负载的角度来考虑，这个帧数是不会太高了。通常在 10~30Hz 左右。理论上对于实时性不高的RPG游戏一帧处理一次网络请求然后返回结果给客户端就能满足需求了，服务器处理完当前帧就会开始Sleep，直到下一帧开始。但是这里有个问题，就是网络包可能正好错过了当前帧的Recv时机，从而需要等到下一帧才能被处理，这就导致对于这个网络包，其延时被额外加上了(1000/FPS)ms。如果服务器的FPS是10，那么这里就额外引入了100ms的延迟。</p>
+<p>MMO的游戏服务器通常都有一个帧的概念。就是游戏世界会按固定的帧速率运行。一来是为了公平，二来是游戏世界模拟的需要。通常从服务器负载的角度来考虑，这个帧数是不会太高了。通常在 10~30Hz 左右。理论上对于实时性不高的RPG游戏一帧处理一次网络请求然后返回结果给客户端就能满足需求了，服务器处理完当前帧就会开始Sleep，直到下一帧开始。但是这里有个问题，就是网络包可能正好错过了当前帧的Recv时机，从而需要等到下一帧才能被处理，这就导致对于这个网络包，其延时被额外加上了(1000/FPS)ms。如果服务器的FPS是10，那么这里就额外引入了100ms的延迟</p>
 </div>
 <div class="paragraph">
 <p>随着整个游戏市场逐渐从RPG向打击感更爽快的ARPG转换。如何减小网络延迟对客户端手感的影响就变得比较重要。所以，服务器应该尽快的处理收到数据并适时得返回给客户端。也就是我们应该让网络处理的循环可以跑得尽可能快，而游戏世界模拟的帧数维持恒定。</p>
@@ -118,7 +118,7 @@ end if</code></pre>
 <p>这里我们讨论两种情况，一种是客户端向服务器发的移动指令。由于移动是和游戏世界模拟相关的，不能客户端发得快服务器上就跑得快，所以这种包，网络层收到后提交给游戏逻辑，游戏逻辑也就只是缓存一下状态，实际的位置移动，还是在游戏世界的模拟帧里面处理。另一种情况是客户端释放一个技能。由于不能相信客户端的数据，技能是否释放成功是由服务器判断的，所以整个施法流程是：客户端UI操作 &#8594; 客户端逻辑预判并发送请求 &#8594; 服务器判断并返回结果 &#8594; 客户端完成施法并播放动作表现。也就是玩家按图标到看到画面反馈是有一个网络+服务器处理延迟的。这个时候服务器就应该处理尽快响应。当然技能会有CoolDown设计，所以并不会导致网速快就能多放技能的问题。</p>
 </div>
 <div class="paragraph">
-<p>至于网络处理到底能多块，这里就有一个Sleep精度的问题了。因为不能让网络处理把CPU占满了，所以必须要Sleep。最早在Windows系统下，Sleep函数的精度大约是16ms，也就是60Hz左右。Linux下通常在10ms，100Hz。Windows NT内核可以通过API动态把这个精度提升到1ms，1000Hz。Linux并不能动态修改，而是内核编译时候的一个参数，不过好在CentOS 7的默认配置就是1000Hz。所以，理论上因为网络包的到达时机问题导致的延迟，可以低至1ms，远小时网络物理层的延迟，也就可以忽略不计了。</p>
+<p>至于网络处理到底能多块，这里就有一个Sleep精度的问题了。因为不能让网络处理把CPU占满了，所以必须要Sleep。最早在Windows系统下，Sleep函数的精度大约是16ms，也就是60Hz左右。Linux下通常在10ms，100Hz。Windows NT内核可以通过API动态把这个精度提升到1ms，1000Hz。Linux并不能动态修改，而是内核编译时候的一个参数，不过好在CentOS 7的默认配置就是1000Hz。所以，理论上因为网络包的到达时机问题导致的延迟，可以低至1ms，远小于网络物理层的延迟，也就可以忽略不计了。</p>
 </div>
 </div>
 </div>
@@ -212,8 +212,8 @@ end if</code></pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1472013194192"></script>
-    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/index.js?v=1472013194192"></script>
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1472013377583"></script>
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/index.js?v=1472013377583"></script>
 
     
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
