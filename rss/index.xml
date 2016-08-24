@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Aug 2016 14:41:29 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 24 Aug 2016 04:33:14 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[减小 Game Server 的网络延迟]]></title><description><![CDATA[<div class="sect1">
+<h2 id="__">背景</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>之前 <a href="http://jx3.xoyo.com">剑网3</a> 游戏内的客户端到服务器的TCP网络延迟大约是 60~120ms。但是如果直接ping服务器的IP，会发现UDP包在物理网络上传输的实际延迟远远小于这个值，在比较好的网络环境下，甚至低于10ms。</p>
+</div>
+<div class="paragraph">
+<p>稍加分析我们就可以看出，游戏内的实际网络延迟主要可以分为两大部分，一部分是协议包实际在网络上传输导致的延迟，另一部分则是服务器处理包所产生的延迟。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__tcp">网络层面减小TCP的延迟</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TCP本身是一个可靠的协议，理论上也只是在包头加上了额外的校验和序号信息。那么TCP是如何导致延迟增加的呢？其实，主要是TCP默认启用的 <em>Nagle&#8217;s algorithm</em>。</p>
+</div>
+<div class="paragraph">
+<p><em>Nagle&#8217;s algorithm</em> 的目的是减少大量小包导致的Overhead过高的问题。源于早前Telnet的实现，客户端的每一个按键都会通过TCP发送，本身的信息也就数个字节，而TCP+IP的协议头最少都要40字节。于是在TCP协议栈的层面加入了合并小包的 <em>Nagle&#8217;s algorithm</em> 算法。算法的简单描述如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c" data-lang="c">if there is new data to send
+  if the window size &gt;= MSS and available data is &gt;= MSS
+    send complete MSS segment now
+  else
+    if there is unconfirmed data still in the pipe
+      enqueue data in the buffer until an acknowledge is received
+    else
+      send data immediately
+    end if
+  end if
+end if</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这里我们可以看到，<em>Nagle&#8217;s algorithm</em> 算法在拼包的时候会等ACK包，如果是一般的应用其实这样效率会比较高。但是对于游戏而言，本身的需求就不是最大化带宽利用率而是实时性。外加我们的游戏在应用层面本身就做了小包合并大包的算法，其实不需要TCP层面在做一次了，而由应用自己来决定什么时候需要等，什么时候应该发。实际的修改也比较简单。利用TCP的NO_DELAY参数关闭 <em>Nagle&#8217;s algorithm</em>，然后应用层在一个网络处理循环内自己做拼包，在网络处理循环结束时Flush一下数据，这样保证数据在处理完之后就能被提交到系统层，这个时候如果物理层通畅，数据就会发出去，否则就在系统发送缓冲区等着。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">应用层面提高网络处理的频率</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MMO的游戏服务器通常都有一个帧的概念。就是游戏世界会按固定的帧速率运行。一来是为了公平，二来是游戏世界模拟的需要。通常从服务器负载的角度来考虑，这个帧数是不会太高了。通常在 10~30Hz 左右。理论上对于实时性不高的RPG游戏一帧处理一次网络请求然后返回结果给客户端就能满足需求了，服务器处理完当前帧就会开始Sleep，直到下一帧开始。但是这里有个问题，就是网络包可能正好错过了当前帧的Recv时机，从而需要等到下一帧才能被处理，这就导致对于这个网络包，其延时被额外加上了(1000/FPS)ms。如果服务器的FPS是10，那么这里就额外引入了100ms的延迟。</p>
+</div>
+<div class="paragraph">
+<p>随着整个游戏市场逐渐从RPG向打击感更爽快的ARPG转换。如何减小网络延迟对客户端手感的影响就变得比较重要。所以，服务器应该尽快的处理收到数据并适时得返回给客户端。也就是我们应该让网络处理的循环可以跑得尽可能快，而游戏世界模拟的帧数维持恒定。</p>
+</div>
+<div class="paragraph">
+<p>这里我们讨论两种情况，一种是客户端向服务器发的移动指令。由于移动是和游戏世界模拟相关的，不能客户端发得快服务器上就跑得快，所以这种包，网络层收到后提交给游戏逻辑，游戏逻辑也就只是缓存一下状态，实际的位置移动，还是在游戏世界的模拟帧里面处理。另一种情况是客户端释放一个技能。由于不能相信客户端的数据，技能是否释放成功是由服务器判断的，所以整个施法流程是：客户端UI操作 &#8594; 客户端逻辑预判并发送请求 &#8594; 服务器判断并返回结果 &#8594; 客户端完成施法并播放动作表现。也就是玩家按图标到看到画面反馈是有一个网络+服务器处理延迟的。这个时候服务器就应该处理尽快响应。当然技能会有CoolDown设计，所以并不会导致网速快就能多放技能的问题。</p>
+</div>
+<div class="paragraph">
+<p>至于网络处理到底能多块，这里就有一个Sleep精度的问题了。因为不能让网络处理把CPU占满了，所以必须要Sleep。最早在Windows系统下，Sleep函数的精度大约是16ms，也就是60Hz左右。Linux下通常在10ms，100Hz。Windows NT内核可以通过API动态把这个精度提升到1ms，1000Hz。Linux并不能动态修改，而是内核编译时候的一个参数，不过好在CentOS 7的默认配置就是1000Hz。所以，理论上因为网络包的到达时机问题导致的延迟，可以低至1ms，远小时网络物理层的延迟，也就可以忽略不计了。</p>
+</div>
+</div>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</guid><category><![CDATA[MMO]]></category><category><![CDATA[ Server]]></category><category><![CDATA[ Network]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Wed, 24 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
 <p><em>HubPress</em>虽然用起来很方便，不过显然和那些起步比较早的同类系统相比，周边配套就没那么完善了。虽然系统原生支持分享到<em>twitter</em>、<em>facebook</em>和<em>google plus</em>，并且可以用<em>Disqus</em>来评论，但是显然这些都没有办法适应国内网络的特殊性。</p>
 </div>
 <div class="paragraph">
@@ -6,7 +62,7 @@
 </div>
 <div class="paragraph">
 <p>这样，基本的Blog功能就差不多了。至于排版和美化的工作，就留待以后持续改进了。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ DuoShuo]]></category><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ DuoShuo]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
 <p>今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。</p>
 </div>
 <div class="paragraph">
@@ -14,4 +70,4 @@
 </div>
 <div class="paragraph">
 <p>所幸今天看到了<em>hubpress</em>，一个直接在<em>github</em>上生成静态Blog的工具。非常小巧好用，前提条件就只有一个，你要有一个免费的<em>github</em>账号。花了15分钟看上手文档和配置，15分钟敲内容，这第一篇Blog就这么诞生了。虽然有点晚，但有个开始总是好的。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/hello-world.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/hello-world.html</guid><category><![CDATA[HubPress]]></category><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/hello-world.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/hello-world.html</guid><category><![CDATA[HubPress]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
