@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 24 Aug 2016 04:36:17 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[减小 Game Server 的网络延迟]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 24 Aug 2016 04:37:29 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[减小 Game Server 的网络延迟]]></title><description><![CDATA[<div class="sect1">
 <h2 id="__">背景</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -54,15 +54,7 @@ end if</code></pre>
 <p>至于网络处理到底能多块，这里就有一个Sleep精度的问题了。因为不能让网络处理把CPU占满了，所以必须要Sleep。最早在Windows系统下，Sleep函数的精度大约是16ms，也就是60Hz左右。Linux下通常在10ms，100Hz。Windows NT内核可以通过API动态把这个精度提升到1ms，1000Hz。Linux并不能动态修改，而是内核编译时候的一个参数，不过好在CentOS 7的默认配置就是1000Hz。所以，理论上因为网络包的到达时机问题导致的延迟，可以低至1ms，远小于网络物理层的延迟，也就可以忽略不计了。</p>
 </div>
 </div>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</guid><category><![CDATA[MMO]]></category><category><![CDATA[ Server]]></category><category><![CDATA[ Network]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Wed, 24 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[集成了评论和分享功能]]></title><description><![CDATA[<div class="paragraph">
-<p><em>HubPress</em>虽然用起来很方便，不过显然和那些起步比较早的同类系统相比，周边配套就没那么完善了。虽然系统原生支持分享到<em>twitter</em>、<em>facebook</em>和<em>google plus</em>，并且可以用<em>Disqus</em>来评论，但是显然这些都没有办法适应国内网络的特殊性。</p>
-</div>
-<div class="paragraph">
-<p>于是选择用国内的 <a href="http://duoshuo.com">多说</a> 来替代。通过修改<em>HubPress</em>自带的主题模板来嵌入 <a href="http://duoshuo.com">多说</a> 的JavaScripts和HTML代码，现在基本可以使用了。网上相关的资料还是比较多的，过程这里就不赘述了。不过有一点，如果你搜“hubpress 多说”那么可能找不到多少结果。但是，因为<em>HubPress</em>使用<em>Ghost</em>的模板系统，所以搜“ghost 多说”就能搜到很多资料，然后参考来做就可以了。</p>
-</div>
-<div class="paragraph">
-<p>这样，基本的Blog功能就差不多了。至于排版和美化的工作，就留待以后持续改进了。</p>
-</div>]]></description><link>https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/20/integrating-comment-system.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ DuoShuo]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Sat, 20 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</link><guid isPermaLink="true">https://bitcowboy.github.io/2016/08/24/reducing-game-servers-latency.html</guid><category><![CDATA[MMO]]></category><category><![CDATA[ Server]]></category><category><![CDATA[ Network]]></category><dc:creator><![CDATA[Jeffrey Chen]]></dc:creator><pubDate>Wed, 24 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[hello world]]></title><description><![CDATA[<div class="paragraph">
 <p>今天开始，算是正式有个自己的Blog了。远离微博的喧闹和朋友圈的装B，在这里可以静下心来记录一些想法。</p>
 </div>
 <div class="paragraph">
