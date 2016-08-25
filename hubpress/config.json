@@ -8,7 +8,8 @@
     "title": "BitCowboy's Blog",
     "description": "Tech meets Art",
     "logo": "/images/logo.jpg",
-    "cover": ""
+    "cover": "",
+    "googleAnalytics": "UA-83133120-1"
   },
   "socialnetwork": {
     "email": "bitcowboy@gmail.com"
