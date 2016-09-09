@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://bitcowboy.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//bitcowboy.github.io/themes/casper/assets/css/screen.css?v=1473419457568" />
+    <link rel="stylesheet" type="text/css" href="//bitcowboy.github.io/themes/casper/assets/css/screen.css?v=1473420010582" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://bitcowboy.github.io/2016-09-09.adoc" />
@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="BitCowboy&#x27;s Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="网游的整体架构" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="今天抽空简单画了几幅图。 说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数据是怎么在不同层次间流转的，如果是个网游，那么同步和通信应该发送在什么地方。 以后有时间，也许我会把这几个图展开来讲一下细节。" />
     <meta property="og:url" content="https://bitcowboy.github.io/2016-09-09.adoc" />
     <meta property="article:tag" content="MMO" />
     <meta property="article:tag" content=" Game" />
@@ -29,7 +29,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="网游的整体架构" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="今天抽空简单画了几幅图。 说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数据是怎么在不同层次间流转的，如果是个网游，那么同步和通信应该发送在什么地方。 以后有时间，也许我会把这几个图展开来讲一下细节。" />
     <meta name="twitter:url" content="https://bitcowboy.github.io/2016-09-09.adoc" />
     
     <script type="application/ld+json">
@@ -65,7 +65,16 @@ null
         </header>
 
         <section class="post-content">
-            <div class="imageblock">
+            <div class="paragraph">
+<p>今天抽空简单画了几幅图。</p>
+</div>
+<div class="paragraph">
+<p>说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数据是怎么在不同层次间流转的，如果是个网游，那么同步和通信应该发送在什么地方。</p>
+</div>
+<div class="paragraph">
+<p>以后有时间，也许我会把这几个图展开来讲一下细节。</p>
+</div>
+<div class="imageblock">
 <div class="content">
 <img src="/images/GameGrandControlLoop/Client.PNG" alt="Client">
 </div>
@@ -120,7 +129,7 @@ null
                 	data-thread-key="https://bitcowboy.github.io/2016-09-09.adoc" 
                 	data-title="网游的整体架构" 
                 	data-images=" 
-                	data-content="..." 
+                	data-content="今天抽空简单画了几幅图。 说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数..." 
                 	data-url="https://bitcowboy.github.io/2016-09-09.adoc">
                     <div class="ds-share-inline">
                     	<ul class="ds-share-icons-16 right">
@@ -170,8 +179,8 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1473419457568"></script>
-    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/index.js?v=1473419457568"></script>
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1473420010582"></script>
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/index.js?v=1473420010582"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
