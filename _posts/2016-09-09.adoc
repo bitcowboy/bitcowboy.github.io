@@ -2,6 +2,14 @@
 :hp-alter-title: Grand Loop of Online Game
 :hp-tags: MMO, Game, Server
 
+今天抽空简单画了几幅图。
+
+说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数据是怎么在不同层次间流转的，如果是个网游，那么同步和通信应该发送在什么地方。
+
+以后有时间，也许我会把这几个图展开来讲一下细节。
+
 image::/images/GameGrandControlLoop/Client.PNG[Client]
+
 image::/images/GameGrandControlLoop/Server.PNG[Server]
+
 image::/images/GameGrandControlLoop/CS.PNG[C/S Communication]
