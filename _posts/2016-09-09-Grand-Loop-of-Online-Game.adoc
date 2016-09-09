@@ -1,5 +1,5 @@
 = 网游的整体架构
-:hp-alter-title: Grand Loop of Online Game
+:hp-alt-title: Grand Loop of Online Game
 :hp-tags: MMO, Game, Server
 
 今天抽空简单画了几幅图。
