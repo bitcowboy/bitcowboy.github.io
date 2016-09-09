@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>网游的整体架构</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://bitcowboy.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//bitcowboy.github.io/themes/casper/assets/css/screen.css?v=1473419457568" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://bitcowboy.github.io/2016-09-09.adoc" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="BitCowboy&#x27;s Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="网游的整体架构" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://bitcowboy.github.io/2016-09-09.adoc" />
+    <meta property="article:tag" content="MMO" />
+    <meta property="article:tag" content=" Game" />
+    <meta property="article:tag" content=" Server" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="网游的整体架构" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:url" content="https://bitcowboy.github.io/2016-09-09.adoc" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="BitCowboy&#x27;s Blog" href="https://bitcowboy.github.io/rss/" />
+</head>
+<body class="post-template tag-MMO tag-Game tag-Server nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="blog-logo" href="https://bitcowboy.github.io"><img src="/images/logo.jpg" alt="BitCowboy&#x27;s Blog" /></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-MMO tag-Game tag-Server">
+
+        <header class="post-header">
+            <h1 class="post-title">网游的整体架构</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-09-09">09 September 2016</time>  on <a href="https://bitcowboy.github.io/tag/MMO/">MMO</a>, <a href="https://bitcowboy.github.io/tag/Game/"> Game</a>, <a href="https://bitcowboy.github.io/tag/Server/"> Server</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="imageblock">
+<div class="content">
+<img src="/images/GameGrandControlLoop/Client.PNG" alt="Client">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/GameGrandControlLoop/Server.PNG" alt="Server">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/GameGrandControlLoop/CS.PNG" alt="C/S Communication">
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://bitcowboy.github.io/author/bitcowboy/" style="background-image: url(https://avatars.githubusercontent.com/u/2291013?v&#x3D;3)"><span class="hidden">Jeffrey Chen's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://bitcowboy.github.io/author/bitcowboy/">Jeffrey Chen</a></h4>
+
+                    <p>Read <a href="https://bitcowboy.github.io/author/bitcowboy/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Zhuhai, China</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <!--
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=%E7%BD%91%E6%B8%B8%E7%9A%84%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84&amp;url=https://bitcowboy.github.io/2016-09-09.adoc"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bitcowboy.github.io/2016-09-09.adoc"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://bitcowboy.github.io/2016-09-09.adoc"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+                -->
+                <div class="ds-share" 
+                	data-thread-key="https://bitcowboy.github.io/2016-09-09.adoc" 
+                	data-title="网游的整体架构" 
+                	data-images=" 
+                	data-content="..." 
+                	data-url="https://bitcowboy.github.io/2016-09-09.adoc">
+                    <div class="ds-share-inline">
+                    	<ul class="ds-share-icons-16 right">
+              	            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+              	            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+              	        </ul>
+              	    </div>
+              	</div>
+            </section>
+
+        </footer>
+
+        
+        <section class="post-comments">
+          <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="https://bitcowboy.github.io/2016-09-09.adoc" data-title="网游的整体架构" data-url="https://bitcowboy.github.io/2016-09-09.adoc"></div>
+	  <!-- 多说评论框 end -->
+        </section>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://bitcowboy.github.io">BitCowboy&#x27;s Blog</a> &copy; 2016</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1473419457568"></script>
+    <script type="text/javascript" src="//bitcowboy.github.io/themes/casper/assets/js/index.js?v=1473419457568"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83133120-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"bitcowboy"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+	</script>
+	<!-- 多说公共JS代码 end -->
+
+</body>
+</html>
