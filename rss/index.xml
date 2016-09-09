@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 09 Sep 2016 11:10:57 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[网游的整体架构]]></title><description><![CDATA[<div class="imageblock">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BitCowboy's Blog]]></title><description><![CDATA[Tech meets Art]]></description><link>https://bitcowboy.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 09 Sep 2016 11:20:10 GMT</lastBuildDate><atom:link href="https://bitcowboy.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[网游的整体架构]]></title><description><![CDATA[<div class="paragraph">
+<p>今天抽空简单画了几幅图。</p>
+</div>
+<div class="paragraph">
+<p>说起游戏来可能大家都不陌生，甚至很多人都在从事游戏开发的工作。这几张图看起来也没啥特殊的。不过至少国内的游戏开发者，时刻把这几幅图印在脑子里的并不多。但是往往越是复杂越是庞大的项目，越是需要简单的设计和清晰的层次结构。这幅图简单的描述了数据是怎么在不同层次间流转的，如果是个网游，那么同步和通信应该发送在什么地方。</p>
+</div>
+<div class="paragraph">
+<p>以后有时间，也许我会把这几个图展开来讲一下细节。</p>
+</div>
+<div class="imageblock">
 <div class="content">
 <img src="/images/GameGrandControlLoop/Client.PNG" alt="Client">
 </div>
